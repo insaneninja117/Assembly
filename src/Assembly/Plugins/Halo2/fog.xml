@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<plugin game="Halo2" baseSize="0x9C">
+	<!-- Automatically generated plugin -->
+	<revisions>
+		<revision author="insaneninja117" version="1">Almost Complete</revision>
+	</revisions>
+	<bitfield16 name="Flags" offset="0x0" visible="true">
+    		<bit name="Fixed In World Space" index="0" />
+    		<bit name="Depreciated" index="1" />
+    		<bit name="Sky Casts Light From Below" index="2" />
+    		<bit name="Disable Sky In Lightmaps" index="3" />
+    		<bit name="Fog Only Affects Containing Cluster" index="4" />
+    		<bit name="Use Clear Color" index="5" />
+  	</bitfield16>
+	<int16 name="Priority" offset="0x2" visible="true" />
+	<stringId name="Global Material Name" offset="0x4" visible="true" />
+	<int16 name="Unknown" offset="0x8" visible="true" />
+	<int16 name="Unknown" offset="0xA" visible="true" />
+	<float32 name="Maximum Density" offset="0xC" visible="true" />
+	<float32 name="Opaque Distance" offset="0x10" visible="true" />
+	<float32 name="Opaque Depth" offset="0x14" visible="true" />
+	<float32 name="Atmospheric Planar Depth Lower" offset="0x18" visible="true" />
+	<float32 name="Atmospheric Planar Depth Upper" offset="0x1C" visible="true" />
+	<float32 name="Eye Offset Scale" offset="0x20" visible="true" />
+	<colorf name="Color" offset="0x24" format="rgb" visible="true" />
+	<reflexive name="Patchy Fog" offset="0x30" visible="true" entrySize="0x3A">
+    		<colorf name="Color" offset="0x0" format="rgb" visible="true" />
+    		<undefined name="Unknown" offset="0xC" visible="false" />
+    		<float32 name="Density Lower" offset="0x18" visible="true" />
+    		<float32 name="Density Upper" offset="0x1C" visible="true" />
+    		<float32 name="Distance Lower" offset="0x20" visible="true" />
+    		<float32 name="Distance Upper" offset="0x24" visible="true" />
+    		<float32 name="Min Depth Fraction" offset="0x28" visible="true" />
+    		<tagref name="Patchy Fog" offset="0x2C" visible="true" />
+  	</reflexive>
+  	<!--
+ 	<tagref name="Background Sound" offset="0x64" visible="True" />
+  	<stringId name="Background Sound" offset="0x7C" visible="True" />
+  	<tagref name="Sound Enviroment" offset="0x70" visible="True" />
+  	<stringId name="Sound Enviroment" offset="0x78" visible="True" />
+  	<float32 name="Environment Damping Factor" offset="0x7C" visible="True" />
+  	<float32 name="Background Sound Gain" offset="0x80" visible="True" />
+   	<tagref name="Enter Sound" offset="0x84" visible="True" />
+ 	<stringId name="Enter Sound" offset="0x8C" visible="True" />
+  	<tagref name="Exit Sound" offset="0x90" visible="True" />
+  	<stringId name="Exit Sound" offset="0x98" visible="True" />
+  	-->
+</plugin>
