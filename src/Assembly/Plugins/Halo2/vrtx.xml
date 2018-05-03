@@ -1,17 +1,18 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<plugin game="Halo2" baseSize="0xC">
+<?xml version="1.0" encoding="utf-8"?>
+<plugin game="Halo2" baseSize="0x16">
 	<!-- Automatically generated plugin -->
 	<revisions>
 		<revision author="Iron_Forge" version="1">Added basic layout of plugin...</revision>
 		<revision author="Iron_Forge" version="2">Fixed up basic layout...</revision>
+		<revision author="insaneninja117" version="3">Here be hexadecimal dragons...</revision>
 	</revisions>
-	<undefined name="Unknown" offset="0x0" visible="false" />
-	<reflexive name="Unknown5" offset="0x4" visible="false" entrySize="0x1C">
-		<reflexive name="Unknown7" offset="0x4" visible="false" entrySize="0x2">
-			<int16 name="Unknown" offset="0x0" visible="false" />
-		</reflexive>
-		<reflexive name="Unknown10" offset="0xC" visible="false" entrySize="0x1">
-			<uint8 name="Unknown" offset="0x0" visible="false" />
-		</reflexive>
+	<enum32 name="Platform" offset="0x0" visible="true" >
+		<option name="PC" value="0x0"/>
+		<option name="Xbox" value="0x1"/>
+	</enum32>
+	<reflexive name="Compiled Code" offset="0x4" visible="true" entrySize="0x1C">
+		<dataref name="Shader Code" offset="0x8" visible="true"/>
+		<!-- option 2 looks like the compiled code, a hex converter outputs "vs_2_0 Microsoft (R) D3DX9 Shader Compiler" amongst the gibberish" -->
 	</reflexive>
+	<uint16 name="Output Swizzles" offset="0x14" visible="true" />
 </plugin>
