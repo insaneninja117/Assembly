@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<plugin game="Halo2" baseSize="0xA0">
+	<!-- Automatically generated plugin -->
+	<revisions>
+		<revision author="insaneninja117" version="1">Almost there, offsets need fixing</revision>
+	</revisions>
+	<tagref name="Model" offset="0x0" visible="true" />
+	<tagref name="Animation Graph" offset="0x8" visible="true" />
+	<bitfield32 name="Flags" offset="0x10" visible="true">
+    	<bit name="Fixed In World Space" index="0" />
+    	<bit name="Depreciated" index="1" />
+    	<bit name="Sky Casts Light From Below" index="2" />
+    	<bit name="Disable Sky In Lightmaps" index="3" />
+    	<bit name="Fog Only Affects Containing Cluster" index="4" />
+    	<bit name="Use Clear Color" index="5" />
+  </bitfield32>
+	<float32 name="Render Model Scale" offset="0x14" visible="true" />
+	<float32 name="Movement Scale" offset="0x18" visible="true" />
+	<reflexive name="Cube Map" offset="0x1C" visible="true" entrySize="0x10">
+		<tagref name="Cube Map" offset="0x0" visible="true" />
+		<float32 name="Power Scale" offset="0x8" visible="true" />
+	</reflexive>
+	<colorf name="Indoor Ambient Color" offset="0x28" format="rgb" visible="true"/>
+	<colorf name="Outdoor Ambient Color" offset="0x34" format="rgb" visible="true"/>
+	<float32 name="Fog Spread Distance" offset="0x40" visible="true" />
+	<reflexive name="Atmospheric Fog" offset="0x44" visible="true" entrySize="0x18">
+		<colorf name="Color" offset="0x0" format="rgb" visible="true"/>
+    	<float32 name="Maximum Density (0 to 1)" offset="0xC" visible="true" />
+    	<float32 name="Start Distance" offset="0x10" visible="true" />
+    	<float32 name="Opaque Distnace" offset="0x14" visible="true" />
+  </reflexive>
+  <reflexive name="Secondary Fog" offset="0x5C" visible="true" entrySize="0x18">
+		<colorf name="Color" offset="0x0" format="rgb" visible="true"/>
+    	<float32 name="Maximum Density" offset="0xC" visible="true" />
+    	<float32 name="Start Distance" offset="0x10" visible="true" />
+    	<float32 name="Opaque Distnace" offset="0x14" visible="true" />
+  </reflexive>
+  <reflexive name="Sky Fog" offset="0x74" visible="true" entrySize="0x10">
+		<colorf name="Color" offset="0x0" format="rgb" visible="true"/>
+    	<float32 name="Density" offset="0xC" visible="true" />
+  </reflexive>
+    <reflexive name="Patchy Fog" offset="0x84" visible="true" entrySize="0x18">
+		<colorf name="Color" offset="0x0" format="rgb" visible="true"/>
+    	<float32 name="Density Lower" offset="0xC" visible="true" />
+    	<float32 name="Density Upper" offset="0x10" visible="true" />
+    	<float32 name="Distance Lower" offset="0x14" visible="true" />
+    	<float32 name="Distance Upper" offset="0x18" visible="true" />
+    	<tagref name="Patchy Fog" offset="0x1C" visible="true" />
+  </reflexive>
+  <comment title="Bloom Override" />
+  <float32 name="Amount (0 to 1)" offset="0x9C" visible="true"/>
+  <float32 name="Threshold (0 to 1)" offset="0xA0" visible="true"/>
+  <float32 name="Brightness (0 to 1)" offset="0xA4" visible="true"/>
+  <float32 name="Gamma Power" offset="0xA8" visible="true"/>
+  <reflexive name="Lights" offset="0xAC" visible="true" entrySize="0x18">
+    <float32 name="Direction Vector i" offset="0x0" visible="true" />
+    <float32 name="Direction Vector j" offset="0x4" visible="true" />
+    <float32 name="Direction Vector k" offset="0x8" visible="true" />
+    <float32 name="Direction yaw" offset="0xC" visible="true" />
+    <float32 name="Direction pitch" offset="0x10" visible="true" />
+    <tagref name="Lens Flare" offset="0x14" visible="true" />
+    <reflexive name="Fog" offset="0x1C" visible="true" entrySize="0x18">
+    	<colorf name="Color" offset="0x0" format="rgb" visible="true"/>
+    	<float32 name="Maximum Density" offset="0xC" visible="true" />
+    	<float32 name="Start Distance" offset="0x10" visible="true" />
+    	<float32 name="Opaque Distnace" offset="0x14" visible="true" />
+    	<comment title="Fog Influences"/>
+    	<float32 name="Cone From" offset="0x18" visible="true" />
+    	<float32 name="Cone To" offset="0x1C" visible="true" />
+    	<float32 name="Atmospheric Fog Influence" offet="0x20" visible="true" />
+    	<float32 name="Secondary Fog Influence" offset="0x24" visible="true" />
+    	<float32 name="Sky Fog Influence" offset="0x28" visible="true" />
+    </reflexive>
+    <reflexive name="Fog Opposite" offset="0x48" visible="true" entrySize="0x18">
+    	<colorf name="Color" offset="0x0" format="rgb" visible="true"/>
+    	<float32 name="Maximum Density" offset="0xC" visible="true" />
+    	<float32 name="Start Distance" offset="0x10" visible="true" />
+    	<float32 name="Opaque Distnace" offset="0x14" visible="true" />
+    	<comment title="Fog Influences"/>
+    	<float32 name="Cone From" offset="0x18" visible="true" />
+    	<float32 name="Cone To" offset="0x1C" visible="true" />
+    	<float32 name="Atmospheric Fog Influence" offet="0x20" visible="true" />
+    	<float32 name="Secondary Fog Influence" offset="0x24" visible="true" />
+    	<float32 name="Sky Fog Influence" offset="0x28" visible="true" />
+    </reflexive>
+    <reflexive name="Radiosity" offset="0x74" visible="true" entrySize="0x18">
+    	<bitfield32 name="Flags" offset="0x0" visible="true">
+    		<bit name="Affects Exteriors" index="0" />
+    		<bit name="Affects Interiors" index="1" />
+    		<bit name="Direct Illumination in Lightmaps" index="2" />
+    		<bit name="Inirect Illumination in Lightmaps" index="3" />
+  		</bitfield32>
+    	<colorf name="Color" offset="0x4" format="rgb" visible="true"/>
+    	<float32 name="Power" offset="0x10" visible="true" />
+    	<float32 name="Test Distance" offset="0x14" visible="true" />
+    	<float32 name="Diameter" offset="0x18" visible="true" />
+    </reflexive>
+  </reflexive>
+  <float32 name="Global Sky Rotation" offset="0x146" visible="true"/>
+</plugin>
