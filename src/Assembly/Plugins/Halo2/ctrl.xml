@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <plugin game="Halo2" baseSize="0x140">
 	<!-- Automatically generated plugin -->
 	<revisions>
@@ -6,6 +6,7 @@
 		<revision author="WastingBody" version="2">Nearly completed layout...</revision>
 		<revision author="XZodia" version="3">Completed</revision>
 		<revision author="Lord Zedd" version="4">Fully completed</revision>
+		<revision author="insaneninja117" version="5">Fixed flags bitfield</revision>
 	</revisions>
 	<enum16 name="Object Type" offset="0x0" visible="true">
 		<option name="Biped" value="0x0" />
@@ -22,7 +23,7 @@
 		<option name="Crate" value="0xB" />
 		<option name="Creature" value="0xC" />
 	</enum16>
-	<bitfield32 name="Flags" offset="0x0" visible="true">
+	<bitfield16 name="Flags" offset="0x2" visible="true">
 		<bit name="Does Not Cast Shadow" index="0" />
 		<bit name="Search Cardinal Direction Lightmaps" index="1" />
 		<bit name="Bit 2" index="2" />
@@ -37,7 +38,7 @@
 		<bit name="Dead Bipeds Can't Localize" index="11" />
 		<bit name="Attach To Clusters By Dynamic Sphere" index="12" />
 		<bit name="Effects Created By This Object Do Not Spawn Objects In Multiplayer" index="13" />
-	</bitfield32>
+	</bitfield16>
 	<float32 name="Bounding Radius" offset="0x4" visible="true" />
 	<float32 name="Bounding Offset X" offset="0x8" visible="true" />
 	<float32 name="Bounding Offset Y" offset="0xC" visible="true" />
