@@ -15,8 +15,9 @@
 		<revision author="Winkler707" version="11">Added friction and bounce factor values</revision>
 		<revision author="XZodia" version="12">Corrected Bounding Box Values</revision>
 		<revision author="TroyMac1ure" version="13">Added Lift Power Values</revision>
+		<revision author="insaneninja117" version="14">Added Lift bitfield and enums</revision>
 	</revisions>
-	<bitfield32 name="Flags" offset="0x0" visible="true">
+	<bitfield32 name="Unused Flags" offset="0x0" visible="false">
 		<bit name="Bit 0" index="0" />
 		<bit name="Bit 1" index="1" />
 		<bit name="Bit 2" index="2" />
@@ -53,21 +54,67 @@
 	<float32 name="Object Weight" offset="0x4" visible="true" />
 	<float32 name="Low Frequency Decativation Scale" offset="0x8" visible="true" />
 	<float32 name="High Frequency Decativation Scale" offset="0xC" visible="true" />
-	<float32 name="Unknown" offset="0x10" visible="true" />
-	<undefined name="Unknown" offset="0x14" visible="true" />
-	<undefined name="Unknown" offset="0x18" visible="true" />
-	<undefined name="Unknown" offset="0x1C" visible="true" />
-	<undefined name="Unknown" offset="0x20" visible="true" />
-	<undefined name="Unknown" offset="0x24" visible="true" />
 	<reflexive name="Lift Properties" offset="0x28" visible="true" entrySize="0x68">
+		<bitfield32 name="Flags" offset="0x0" visible="true">
+			<bit name="Generates Effects" index="0" />
+			<bit name="Uses Acceleration as Force" index="1" />
+			<bit name="Negates Gravity" index="2" />
+			<bit name="Ignores Players" index="3" />
+			<bit name="Ignores Nonplayers" index="4" />
+			<bit name="Ignores Bipeds" index="5" />
+			<bit name="Ignores Vehicles" index="6" />
+			<bit name="Ignores Weapons" index="7" />
+			<bit name="Ignores Equipment" index="8" />
+			<bit name="Ignores Garbage" index="9" />
+			<bit name="Ignores Projectiles" index="10" />
+			<bit name="Ignores Scenery" index="11" />
+			<bit name="Ignores Machines" index="12" />
+			<bit name="Ignores Controls" index="13" />
+			<bit name="Ignores Light Fixtures" index="14" />
+			<bit name="Ignores Sound Scenery" index="15" />
+			<bit name="Ignores Crates" index="16" />
+			<bit name="Ignores Creatures" index="17" />
+			<bit name="Bit 18" index="18" />
+			<bit name="Bit 19" index="19" />
+			<bit name="Bit 20" index="20" />
+			<bit name="Bit 21" index="21" />
+			<bit name="Bit 22" index="22" />
+			<bit name="Bit 23" index="23" />
+			<bit name="Localizes Physics" index="24" />
+			<bit name="Disable Linear Damping" index="25" />
+			<bit name="Disable Angular Damping" index="26" />
+			<bit name="Ignores Dead Bipeds" index="27" />
+			<bit name="Bit 28" index="28" />
+			<bit name="Bit 29" index="29" />
+			<bit name="Bit 30" index="30" />
+			<bit name="Bit 31" index="31" />
+		</bitfield32>
+		<enum8 name="Minimum Size" offset="0x4" visible="true" >
+			<option name="Default" value="0x0" />
+			<option name="Tiny" value="0x1" />
+			<option name="Small" value="0x2" />
+			<option name="Medium" value="0x3" />
+			<option name="Large" value="0x4" />
+			<option name="Huge" value="0x5" />
+			<option name="Extra Huge" value="0x6" />			
+		</enum8>
+		<enum8 name="Maximum Size" offset="0x5" visible="true" >
+			<option name="Default" value="0x0" />
+			<option name="Tiny" value="0x1" />
+			<option name="Small" value="0x2" />
+			<option name="Medium" value="0x3" />
+			<option name="Large" value="0x4" />
+			<option name="Huge" value="0x5" />
+			<option name="Extra Huge" value="0x6" />			
+		</enum8>
 		<stringId name="Name" offset="0x8" visible="true" />
-		<stringId name="Unknown" offset="0xC" visible="false" />
+		<stringId name="Attatchment Name" offset="0xC" visible="true" />
 		<float32 name="Unknown" offset="0x10" visible="false" />
 		<float32 name="Unknown" offset="0x14" visible="false" />
-		<float32 name="Hookes Law E" offset="0x18" visible="false" />
-		<float32 name="Linear Dead Radius" offset="0x1C" visible="false" />
-		<float32 name="Center Acceleration" offset="0x20" visible="false" />
-		<float32 name="Center Max Velocity" offset="0x24" visible="false" />
+		<float32 name="Hookes Law E" offset="0x18" visible="true" />
+		<float32 name="Linear Dead Radius" offset="0x1C" visible="true" />
+		<float32 name="Center Acceleration" offset="0x20" visible="true" />
+		<float32 name="Center Max Velocity" offset="0x24" visible="true" />
 		<float32 name="Axis Acceleration" offset="0x28" visible="true" />
 		<float32 name="Axis Max Velocity" offset="0x2C" visible="true" />
 		<float32 name="Direction Acceleration" offset="0x30" visible="true" />
@@ -79,9 +126,9 @@
 		<float32 name="Unknown" offset="0x48" visible="false" />
 		<float32 name="Unknown" offset="0x4C" visible="false" />
 		<float32 name="Unknown" offset="0x50" visible="false" />
-		<float32 name="Alignment Hookes Law E" offset="0x54" visible="false" />
-		<degree name="Alignment Acceleration" offset="0x58" visible="false" />
-		<degree name="Alignment Max Velocity" offset="0x5C" visible="false" />
+		<float32 name="Alignment Hookes Law E" offset="0x54" visible="true" />
+		<degree name="Alignment Acceleration" offset="0x58" visible="true" />
+		<degree name="Alignment Max Velocity" offset="0x5C" visible="true" />
 		<float32 name="Unknown" offset="0x60" visible="false" />
 		<float32 name="Unknown-" offset="0x64" visible="false" />
 	</reflexive>
