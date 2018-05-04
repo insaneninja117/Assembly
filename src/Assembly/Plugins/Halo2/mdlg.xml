@@ -1,15 +1,16 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <plugin game="Halo2" baseSize="0x8">
 	<!-- Automatically generated plugin -->
 	<revisions>
 		<revision author="Iron_Forge" version="1">Added basic layout of plugin...</revision>
+		<revision author="insaneninja117" version="2">Completed</revision>
 	</revisions>
-	<reflexive name="Unknown" offset="0x0" visible="false" entrySize="0x10">
-		<stringId name="Unknown" offset="0x0" visible="false" />
-		<reflexive name="Unknown" offset="0x4" visible="false" entrySize="0x10">
-			<stringId name="Unknown" offset="0x0" visible="false" />
-			<tagRef name="Unknown" offset="0x4" visible="false" />
+	<reflexive name="Scripted Dialogue" offset="0x0" visible="true" entrySize="0x10">
+		<stringId name="Numerical Reference" offset="0x0" visible="true" />
+		<reflexive name="Sound File" offset="0x4" visible="true" entrySize="0x10">
+			<stringId name="Mission Dialogue Designator" offset="0x0" visible="true" />
+			<tagRef name="Sound Tag" offset="0x4" visible="true" />
 		</reflexive>
-		<stringId name="Unknown" offset="0xC" visible="false" />
+		<stringId name="Playback Sound Effect" offset="0xC" visible="true" />
 	</reflexive>
 </plugin>
